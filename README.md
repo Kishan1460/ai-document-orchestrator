@@ -41,7 +41,6 @@ N8N_WEBHOOK_URL=your_live_production_n8n_webhook_endpoint
 
 ### Installation
 
-```bash
 # Clone the repository
 git clone https://github.com/Kishan1460/ai-document-orchestrator.git
 
