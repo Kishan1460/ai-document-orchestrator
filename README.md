@@ -1,6 +1,3 @@
-# ai-document-orchestrator
-
-
 # 📑 OmniDoc AI: Intelligent Document Parsing & Automation Pipeline
 
 OmniDoc AI is a full-stack, automated document intelligence platform that extracts, analyzes, and processes unstructured text-only PDF documents (such as digital invoices, legal contracts, and corporate meeting notes).
@@ -42,4 +39,15 @@ PORT=5000
 GEMINI_API_KEY=your_google_ai_studio_api_key_here
 N8N_WEBHOOK_URL=your_live_production_n8n_webhook_endpoint
 
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Kishan1460/ai-document-orchestrator.git
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 
