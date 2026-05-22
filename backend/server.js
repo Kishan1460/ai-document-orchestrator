@@ -20,5 +20,9 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: err.message || 'Internal pipeline execution fault.' });
 });
 
+app.get("/", (req, res) => {
+  res.send("AI Document Orchestrator Backend is Running 🚀");
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Orchestration routing matrix running on port ${PORT}`));
