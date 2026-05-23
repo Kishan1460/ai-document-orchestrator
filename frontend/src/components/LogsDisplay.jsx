@@ -1,4 +1,4 @@
-export default function LogsDisplay({ automationStatus, finalAnswer, generatedEmail }) {
+export default function LogsDisplay({ automationStatus, finalAnswer}) {
   if (!automationStatus) return null;
 
   const isSuccess = automationStatus.includes('Successfully') || automationStatus.includes('Sent');
@@ -22,15 +22,6 @@ export default function LogsDisplay({ automationStatus, finalAnswer, generatedEm
           <div className="bg-slate-800/40 border border-slate-800 p-3 rounded-lg text-sm text-slate-300 leading-relaxed">
             {finalAnswer}
           </div>
-        </div>
-      )}
-
-      {generatedEmail && (
-        <div className="space-y-1.5">
-          <span className="text-xs font-semibold tracking-wider text-slate-400 block">Generated Transmitted Mail Template:</span>
-          <pre className="bg-slate-800/40 border border-slate-800 p-3 rounded-lg text-xs text-slate-400 font-mono overflow-x-auto whitespace-pre-wrap leading-relaxed">
-            {generatedEmail}
-          </pre>
         </div>
       )}
     </div>
