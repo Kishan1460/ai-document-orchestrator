@@ -12,7 +12,7 @@ export const triggerAutomationWorkflow = async (req, res, next) => {
       return res.status(500).json({ error: 'Target automation channel connector runtime URL configurations unresolved.' });
     }
 
-    // Step A: Post payload object down to active n8n instance
+    // Post payload object down to active n8n instance
     const n8nResponse = await axios.post(process.env.N8N_WEBHOOK_URL, {
       recipientEmail,
       query,
@@ -20,7 +20,7 @@ export const triggerAutomationWorkflow = async (req, res, next) => {
       rawTextContext
     });
 
-    // Step B: Forward generated orchestration data back down to client front layers smoothly
+    //  Forward generated orchestration data back 
     res.json(n8nResponse.data);
 
   } catch (error) {

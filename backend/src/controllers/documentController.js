@@ -11,17 +11,16 @@ export const processDocument = async (req, res, next) => {
 
     let documentText = '';
 
-    // Step A: Extract raw text from incoming memory stream buffer
+    // Extract raw text 
     if (req.file.mimetype === 'application/pdf') {
       
-      // 2. Initialize the parser instance by passing a data object
+      // Initialize the parser instance 
       const parser = new PDFParse({ data: req.file.buffer });
       
-      // 3. Extract the text using the async class method
+      //  Extract the text using the async class method
       const result = await parser.getText();
       documentText = result.text;
       
-      // 4. IMPORTANT: Always destroy the worker pool to prevent Node memory leaks
       await parser.destroy(); 
       
     } else {
@@ -32,7 +31,7 @@ export const processDocument = async (req, res, next) => {
       return res.status(422).json({ error: 'Inability to extract characters from target payload asset.' });
     }
 
-    // Step B: Push to Gemini utilizing strict schema model structure validation mapping
+    //  Push text to Gemini
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: `
@@ -67,7 +66,6 @@ export const processDocument = async (req, res, next) => {
 
     const parsedJsonResult = JSON.parse(response.text);
 
-    // Step C: Distribute data back down to client layers
     res.json({
       extractedPairs: parsedJsonResult.extracted_pairs,
       rawTextContext: documentText
