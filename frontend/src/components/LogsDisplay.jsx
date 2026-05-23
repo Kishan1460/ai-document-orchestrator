@@ -18,7 +18,7 @@ export default function LogsDisplay({ automationStatus, finalAnswer, generatedEm
 
       {finalAnswer && (
         <div className="space-y-1.5">
-          <span className="text-xs font-semibold tracking-wider text-slate-400 block">n8n Agent Synthesis Analysis:</span>
+          <span className="text-xs font-semibold tracking-wider text-slate-400 block">Final Answer</span>
           <div className="bg-slate-800/40 border border-slate-800 p-3 rounded-lg text-sm text-slate-300 leading-relaxed">
             {finalAnswer}
           </div>

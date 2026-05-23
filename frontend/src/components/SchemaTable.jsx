@@ -6,7 +6,7 @@ export default function SchemaTable({ extractedPairs }) {
           <span className="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-600 text-xs font-bold text-white">2</span>
           Discovered Schema Entities
         </h3>
-        <p className="text-xs text-slate-400">Deterministic structured data parsed successfully by model parameters.</p>
+        <p className="text-xs text-slate-400"> Structured data parsed successfully by model parameters.</p>
       </div>
 
       <div className="border border-slate-700 rounded-xl overflow-hidden bg-slate-900/60">

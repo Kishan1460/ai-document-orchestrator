@@ -5,7 +5,7 @@ export default function Header() {
         MERN + n8n + Gemini Automation
       </div>
       <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
-        AI-Powered Document Orchestrator
+        OmniDoc AI
       </h1>
       <p className="text-slate-400 max-w-xl mx-auto text-sm sm:text-base">
         Extract strict schema elements instantly from unmapped textual data, then seamlessly deploy conditional multi-node business logic triggers.

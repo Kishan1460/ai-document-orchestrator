@@ -18,7 +18,6 @@ export default function App() {
   const [extractedPairs, setExtractedPairs] = useState(null);
   const [rawTextContext, setRawTextContext] = useState('');
   const [finalAnswer, setFinalAnswer] = useState('');
-  const [generatedEmail, setGeneratedEmail] = useState('');
   const [automationStatus, setAutomationStatus] = useState('');
 
   const handleExtract = async (e) => {
@@ -28,7 +27,6 @@ export default function App() {
     setLoadingExtract(true);
     setExtractedPairs(null);
     setFinalAnswer('');
-    setGeneratedEmail('');
     setAutomationStatus('');
     
     const formData = new FormData();
@@ -64,7 +62,6 @@ export default function App() {
       });
 
       setFinalAnswer(res.data.answer);
-      setGeneratedEmail(res.data.email_body);
       setAutomationStatus(res.data.status);
     } catch (err) {
       console.error(err);
@@ -94,11 +91,11 @@ export default function App() {
 
               <div>
                 <label className="block text-xs font-semibold tracking-wider text-slate-400 uppercase mb-2">
-                  Analytical Evaluation Query
+                  Write Query
                 </label>
                 <textarea
                   rows="3"
-                  placeholder="e.g., Extract absolute transaction totals and payment windows to evaluate stability metrics."
+                  placeholder="e.g., Give summary of the data."
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   className="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition-all resize-none"
@@ -175,7 +172,6 @@ export default function App() {
                 <LogsDisplay 
                   automationStatus={automationStatus} 
                   finalAnswer={finalAnswer} 
-                  generatedEmail={generatedEmail} 
                 />
               </div>
             )}
