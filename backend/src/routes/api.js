@@ -19,11 +19,11 @@ const upload = multer({
   }
 });
 
-// Endpoint 1: Schema Miner
+// Schema Miner
 router.post('/extract', upload.single('file'), processDocument);
 
 
-// Endpoint 2: n8n Flow Trigger Proxy Link
+// n8n Flow Trigger Proxy Link
 router.post('/automation', triggerAutomationWorkflow);
 
 export default router;
